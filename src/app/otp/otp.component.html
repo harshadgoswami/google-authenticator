@@ -1,0 +1,23 @@
+<ng-template [ngIf]="showError" >
+    <div class="alert alert-danger" role="alert">
+        Some error has occured!
+      </div>
+ </ng-template>
+ <ng-template [ngIf]="showSuccess" >
+    <div class="alert alert-success" role="alert">
+        Forgot 2FA email is sent!
+      </div>
+ </ng-template>
+<div class="container mx-auto mt-4">
+    <h1>Submit Google OTP</h1>
+    <form [formGroup]="otpForm" (ngSubmit)="onSubmit()"  >
+        <div class="mb-3">
+            <label for="code" class="form-label">2FA Code</label>
+            <input type="text" class="form-control" formControlName="code" id="code" name="code">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div class="mb-3 ">
+        <a class="nav-link" routerLinkActive="active" routerLink="/forgot-2fa"  >Forgot 2FA</a>
+    </div>
+</div>

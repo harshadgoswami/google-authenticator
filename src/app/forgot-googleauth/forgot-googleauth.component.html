@@ -1,0 +1,19 @@
+<ng-template [ngIf]="showError" >
+    <div class="alert alert-danger" role="alert">
+        Some error has occured!
+      </div>
+</ng-template>
+<ng-template [ngIf]="showSuccess" >
+    <div class="alert alert-success" role="alert">
+        Thanks you we have sent you email with reset 2FA link. Use that link for reseting 2FA for your account.
+      </div>
+ </ng-template>
+
+<div class="row">
+    <div class="col">
+       Are you sure you want to reset your 2FA settings ?
+       Click reset Button 
+       
+       <button type="button" (click)="reset2FA()" class="btn btn-primary">Reset</button>
+    </div>
+</div>

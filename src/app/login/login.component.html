@@ -1,0 +1,23 @@
+<ng-template [ngIf]="showError" >
+    <div class="alert alert-danger" role="alert">
+        Some error has occured!
+      </div>
+ </ng-template>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<div class="container">
+    <div class="mb-3 ">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" formControlName="email" class="form-control" value="" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <div class="mb-3 ">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+            <input type="password" formControlName="password" class="form-control" value="" id="inputPassword">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="mb-3 ">
+        <a class="nav-link" routerLinkActive="active" routerLink="/register"  >Register</a>
+    </div>
+</div>
+</form>

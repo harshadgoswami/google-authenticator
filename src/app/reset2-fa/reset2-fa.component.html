@@ -1,0 +1,33 @@
+<ng-template [ngIf]="showError" >
+    <div class="alert alert-danger" role="alert">
+        Some error has occured!
+      </div>
+ </ng-template>
+ <ng-template [ngIf]="showSuccess" >
+    <div class="alert alert-success" role="alert">
+        Successfully Reset done!
+    </div>
+    <div class="mb-3 ">
+        <a class="nav-link" routerLinkActive="active" routerLink="/login"  >Login</a>
+    </div>
+ </ng-template>
+
+<div class="container mx-auto mt-4">
+    <h1>Reset - Set 2FA</h1>
+    <form [formGroup]="reset2faForm" (ngSubmit)="onSubmit()"  >
+        <p>Scan the QR Code in the Authenticator app then enter the code that you see in the app in the text field and
+            click Submit.</p>
+        <img [src]="qr" class="img-fluid" />
+        <div class="mb-3 ">
+            <label for="inputPassword" class="form-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" formControlName="password" class="form-control" value="" id="inputPassword">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="code" class="form-label">2FA Code</label>
+            <input type="text" class="form-control" formControlName="code" id="code" name="code">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
